@@ -1,4 +1,5 @@
 <?php 
+include("connect.php");
   if (isset($_POST['add'])){ 
     $user = $_POST['user'];
     $password= $_POST['password'];
