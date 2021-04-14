@@ -14,5 +14,5 @@ if(!$dbconn){
     while($row = pg_fetch_array($q)){
         echo $row['username'];
     }
-
 ?>
+<a href = " addacc.php"> Them moi tai khoan  </a>
