@@ -11,6 +11,7 @@ include("connect.php");
     else {
      echo " Loi "   ;
     }
+  }
     
 ?>
 <form method = "POST">
