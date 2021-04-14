@@ -11,8 +11,34 @@ if(!$dbconn){
 }
     $sql = "select * from login";
     $q = pg_query($dbconn, $sql);
-    while($row = pg_fetch_array($q)){
-        echo $row['username'];
+
+if(isset($_GET['del'])){
+    $id = $_GET['del'];
+    $query = pg_query($dbconn, "DELETE FROM login WHERE login_id = $id");
+    if($query){
+        header("location:index.php);
     }
+
+}
+    
+       
 ?>
-<a href = " addacc.php"> Them moi tai khoan  </a>
+
+<table style="width:100%">
+  <tr>
+    <th>Username</th>
+    <th>Password</th>
+    <th>Action</th>
+  </tr>
+  <tr>
+      <?php
+        while($row = pg_fetch_array($q)){      
+      ?>
+            <td><?php echo $row["username"] ?></td>
+            <td><?php echo $row["pass"] ?></td>
+            <td><a href= "index.php?del=$row["login_id"]"></td>
+      <?php } ?>
+
+  </tr>
+      
+</table>
