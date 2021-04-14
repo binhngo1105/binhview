@@ -16,7 +16,7 @@ if(isset($_GET['del'])){
     $id = $_GET['del'];
     $query = pg_query($dbconn, "DELETE FROM login WHERE login_id = $id");
     if($query){
-        header("location:index.php);
+        header("location:index.php");
     }
 
 }
